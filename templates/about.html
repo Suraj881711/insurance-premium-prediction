@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About • InsureAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { margin:0; font-family:'Segoe UI',sans-serif; background:linear-gradient(120deg,#f6d365,#fda085); color:#222; }
+    .nav { background:rgba(255,255,255,.9); padding:12px 20px; display:flex; justify-content:space-between; box-shadow:0 5px 15px rgba(0,0,0,.1); }
+    .brand { font-weight:800; color:#e17055; text-decoration:none; }
+    .container { max-width:900px; margin:40px auto; padding:20px; }
+    .card { background:#fff; padding:25px; border-radius:16px; box-shadow:0 10px 20px rgba(0,0,0,.15); }
+    h1 { background:linear-gradient(90deg,#ff6b6b,#feca57,#1dd1a1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    ul { margin-top:15px; }
+    ul li { margin-bottom:8px; }
+    .disclaimer { margin-top:15px; font-size:0.9rem; color:#555; }
+    footer { text-align:center; padding:15px; background:rgba(255,255,255,.9); margin-top:20px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="/">InsureAI</a>
+    <div><a href="/">Home</a> | <a href="/about">About</a></div>
+  </nav>
+
+  <main class="container">
+    <div class="card">
+      <h1>About This Project</h1>
+      <p>InsureAI estimates health insurance charges from age, sex, BMI, children, smoking status, and region.</p>
+      <ul>
+        <li><strong>Transparent inputs:</strong> Only a few fields required</li>
+        <li><strong>Fast results:</strong> Instant prediction after submit</li>
+        <li><strong>Educational:</strong> Learn how ML models can be deployed</li>
+      </ul>
+      <p class="disclaimer">Note: Predictions are estimates and may not reflect actual premiums.</p>
+    </div>
+  </main>
+
+  <footer>© <span id="year"></span> InsureAI</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>

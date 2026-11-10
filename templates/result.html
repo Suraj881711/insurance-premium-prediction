@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Prediction Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family:'Segoe UI',sans-serif; margin:0; background:linear-gradient(135deg,#84fab0,#8fd3f4); color:#333; display:flex; flex-direction:column; min-height:100vh; }
+    .nav { background:rgba(255,255,255,.85); padding:12px 20px; display:flex; justify-content:space-between; box-shadow:0 5px 15px rgba(0,0,0,.1); }
+    .brand { font-weight:800; color:#0077b6; text-decoration:none; }
+    .container { flex:1; display:flex; align-items:center; justify-content:center; padding:20px; }
+    .card { background:#fff; padding:30px; border-radius:18px; box-shadow:0 10px 25px rgba(0,0,0,.2); text-align:center; }
+    .price { font-size:2.4rem; font-weight:700; color:#16a085; }
+    .btn { margin-top:20px; padding:10px 20px; border:none; border-radius:12px; cursor:pointer; background:#ff6b6b; color:#fff; font-weight:bold; transition:.3s; }
+    .btn:hover { background:#1dd1a1; transform:scale(1.05); }
+    footer { text-align:center; padding:15px; background:rgba(255,255,255,0.9); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="/">InsureAI</a>
+    <div><a href="/">Home</a> | <a href="/about">About</a></div>
+  </nav>
+
+  <main class="container">
+    <div class="card">
+      <h2>Your Estimated Insurance Charge</h2>
+      <p class="price">${{ prediction }}</p>
+      {% if inputs %}
+      <p style="color:#555;">
+        📋 Age: {{ inputs.age }} | Sex: {{ inputs.sex }} | BMI: {{ inputs.bmi }} |
+        Children: {{ inputs.children }} | Smoker: {{ inputs.smoker }} | Region: {{ inputs.region }}
+      </p>
+      {% endif %}
+      <button class="btn" onclick="window.location.href='/'">Try Again</button>
+    </div>
+  </main>
+
+  <footer>© <span id="year"></span> InsureAI</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
